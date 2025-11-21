@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/model/category_model.dart';
-import 'package:news_app/widgets/category_cards.dart';
-import 'package:news_app/widgets/newstile.dart';
+import 'package:news_app/widgets/category_list_view.dart';
+import 'package:news_app/widgets/news_list_view.dart';
+import 'package:news_app/widgets/news_tile.dart';
 
 class NewsApp extends StatelessWidget {
   NewsApp({super.key});
@@ -46,7 +47,17 @@ class NewsApp extends StatelessWidget {
             ],
           ),
         ),
-        body: SizedBox(height: 80, child: Newstile()),
+        body: Padding(
+          padding: const EdgeInsets.all(7.0),
+          child: CustomScrollView(
+            slivers: [
+              SliverToBoxAdapter(
+                child: CategoryListView(categoriesList: categoriesList),
+              ),
+              NewsTileListView(),
+            ],
+          ),
+        ),
       ),
     );
   }
