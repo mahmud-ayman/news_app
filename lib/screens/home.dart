@@ -98,8 +98,8 @@ class _NewsAppState extends State<NewsApp> {
             children: const [
               Text('News'),
               Text(
-                'App',
-                style: TextStyle(color: Color.fromARGB(255, 243, 226, 33)),
+                'Void',
+                style: TextStyle(color: Color.fromARGB(255, 33, 243, 208)),
               ),
             ],
           ),
